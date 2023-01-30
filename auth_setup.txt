@@ -1,0 +1,20 @@
+API Key access documentation
+
+
+create account on marketplace.zoom.us
+
+Click develop dropdown -> view app types -> Create OAuth (*account-level app, no publish)
+
+select arbritrary redirect url for oauth -> add same url to whitelisted urls otherwise error
+
+Fill out requried general information. Needed info can be naviaged to though Activation tab *will be in orange at top
+
+add scopes currently rquired (view all users’ chat channels)(View and manage all users’ chat channels)(View all users’ chat messages)(view and manage all users’ chat message) *last one may be only one required
+
+Once finished click on install in the activation portion. Agree to the use of all the information. then you will be redirected to selected earlier with the key. Highlight cod  from the url to use in postmaster. 
+
+Using the zoom OAuth api copy your code into the code query section in postmaster, make sure redirect_uri is the same as oauth redirect specificied in app.
+
+Go to Authorization, Type = API key, key =“Authorization”,  value = “Basic “ followed by the base64 encoding of Client_ID:Client_secret these can be found in app credentials on zoom app, add to = Header
+
+Once sent you should recieve an access_token and a refresh token. Keep track of both of these and them to necessary part of code.
